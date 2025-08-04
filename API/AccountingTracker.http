@@ -1,0 +1,6 @@
+@AccountingTracker_HostAddress = http://localhost:5042
+
+GET {{AccountingTracker_HostAddress}}
+Accept: application/json
+
+###

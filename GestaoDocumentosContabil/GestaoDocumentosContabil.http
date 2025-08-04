@@ -1,6 +1,0 @@
-@GestaoDocumentosContabil_HostAddress = http://localhost:5042
-
-GET {{GestaoDocumentosContabil_HostAddress}}
-Accept: application/json
-
-###
