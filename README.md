@@ -1,29 +1,30 @@
-# 📄 Gestão de Documentos Contábeis
+# 📄 Accounting Documents Management API
 
-Esta API foi desenvolvida com o objetivo de auxiliar profissionais do setor contábil no controle e acompanhamento de **documentos e extratos contábeis** que as empresas devem enviar aos escritórios de contabilidade.
+This API was developed to assist **accounting professionals** in managing and tracking the **documents and financial statements** that companies must submit to accounting offices.
 
-## 🧾 Funcionalidade Principal
+## 🧾 Key Features
 
-- Gerenciamento de **empresas** clientes do escritório contábil
-- Controle de **documentos** obrigatórios a serem entregues mensalmente
-- Verificação de envio de **extratos contábeis**
-- Consulta e cadastro de **situações mensais** por empresa
-- Envio de **Email** com a solicitação de extratos
+- Manage **client companies** of the accounting firm  
+- Track required **monthly document submissions**
+- Monitor **financial statement** deliveries
+- Register and query **monthly status** for each company
+- Send **Emails** requesting pending documents
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 - **.NET 9** (ASP.NET Core Web API)
 - **Entity Framework Core**
 - **PostgreSQL**
-- **Scalar** (documentação da API)
+- **Scalar** (API documentation)
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
-- `Domain` - Entidades do negócio
-- `Application` - Interfaces e serviços da aplicação
-- `Infrastructure` - Implementações, DbContext e acesso a dados
-- `API` - Controllers e exposição dos endpoints
+- `Domain` – Business entities  
+- `Application` – Interfaces and application-level services  
+- `Infrastructure` – Implementations, DbContext, and data access  
+- `API` – Controllers and HTTP endpoints
 
-## 🔐 Segurança
+## 🔐 Security
 
-- Endpoints protegidos com autenticação (em desenvolvimento)
+- Endpoints protected by authentication (in progress)
+
