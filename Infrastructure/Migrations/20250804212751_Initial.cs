@@ -25,7 +25,7 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StatusMensais",
+                name: "SituacaoExtratos",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -36,9 +36,9 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StatusMensais", x => x.Id);
+                    table.PrimaryKey("PK_SituacaoExtratos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StatusMensais_Empresas_EmpresaId",
+                        name: "FK_SituacaoExtratos_Empresas_EmpresaId",
                         column: x => x.EmpresaId,
                         principalTable: "Empresas",
                         principalColumn: "Id",
@@ -46,8 +46,8 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_StatusMensais_EmpresaId",
-                table: "StatusMensais",
+                name: "IX_SituacaoExtratos_EmpresaId",
+                table: "SituacaoExtratos",
                 column: "EmpresaId");
         }
 
@@ -55,7 +55,7 @@ namespace Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "StatusMensais");
+                name: "SituacaoExtratos");
 
             migrationBuilder.DropTable(
                 name: "Empresas");

@@ -1,4 +1,5 @@
 using Application.Interfaces;
+using Domain.Entities;
 using Infrastructure.Data;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 
 builder.Services.AddScoped<IEmailService, EmailService>();
 
+builder.Services.AddScoped<ISituacaoExtratosService, SituacaoExtratosService>();
 
 var app = builder.Build();
 

@@ -27,7 +27,7 @@ public class BaseController<T> : ControllerBase where T : class
     public async Task<IActionResult> Create([FromBody] T entity)
     {
         var created = await _service.CreateAsync(entity);
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = GetId(created) }, created);
+        return created == null ? NotFound() : Ok(created);
     }
 
     [HttpPut("{id}")]

@@ -71,7 +71,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("SmtpSettings");
                 });
 
-            modelBuilder.Entity("Domain.Entities.StatusMensal", b =>
+            modelBuilder.Entity("Domain.Entities.SituacaoExtratos", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,13 +93,13 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("EmpresaId");
 
-                    b.ToTable("StatusMensais");
+                    b.ToTable("SituacaoExtratos");
                 });
 
-            modelBuilder.Entity("Domain.Entities.StatusMensal", b =>
+            modelBuilder.Entity("Domain.Entities.SituacaoExtratos", b =>
                 {
                     b.HasOne("Domain.Entities.Empresa", "Empresa")
-                        .WithMany("StatusMensais")
+                        .WithMany("SituacaoExtratos")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -109,7 +109,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Empresa", b =>
                 {
-                    b.Navigation("StatusMensais");
+                    b.Navigation("SituacaoExtratos");
                 });
 #pragma warning restore 612, 618
         }
