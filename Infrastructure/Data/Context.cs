@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Domain.Entities;
+using Domain.Entities; 
 
 namespace Infrastructure.Data
 {
@@ -9,6 +9,7 @@ namespace Infrastructure.Data
 
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<StatusMensal> StatusMensais { get; set; }
+        public DbSet<SmtpSettings> SmtpSettings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

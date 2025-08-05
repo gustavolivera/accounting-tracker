@@ -1,4 +1,4 @@
-﻿namespace API.Interfaces
+﻿namespace Application.Interfaces
 {
     public interface IBaseService<T> where T : class
     {

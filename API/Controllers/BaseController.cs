@@ -1,4 +1,4 @@
-﻿using API.Interfaces;
+﻿using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]

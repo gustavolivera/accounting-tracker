@@ -1,5 +1,6 @@
-using API.Interfaces;
+using Application.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -17,6 +18,9 @@ builder.Services.AddDbContext<Context>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+
 
 var app = builder.Build();
 

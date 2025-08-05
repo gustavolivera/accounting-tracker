@@ -1,6 +1,5 @@
-﻿using API.Interfaces;
+﻿using Application.Interfaces;
 using Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
