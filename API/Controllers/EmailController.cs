@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Application.DTOs;
 
 namespace API.Controllers
 {
@@ -15,9 +16,9 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EnviarEmail()
+        public async Task<IActionResult> EnviarEmail([FromBody] EmailDto emailDto)
         {
-            await _emailService.SendEmailAsync("social.gustavosilva@gmail.com", "TESTE", "<h1>Boa noiite favor enviar o extrato de julho</h1>");
+            await _emailService.SendEmailAsync(emailDto);
             return Ok("Enviado");
         }
     }

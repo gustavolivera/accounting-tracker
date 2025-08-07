@@ -1,7 +1,9 @@
-﻿namespace Application.Interfaces
+﻿using Application.DTOs;
+
+namespace Application.Interfaces
 {
     public interface IEmailService
     {
-        Task SendEmailAsync(string to, string subject, string body);
+        Task SendEmailAsync(EmailDto emailDto);
     }
 }

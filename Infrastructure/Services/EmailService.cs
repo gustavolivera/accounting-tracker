@@ -6,6 +6,7 @@ using Domain.Entities;
 using Application.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Application.DTOs;
 
 namespace Infrastructure.Services
 {
@@ -23,16 +24,18 @@ namespace Infrastructure.Services
             return await _context.SmtpSettings.FirstOrDefaultAsync();
         }
 
-        public async Task SendEmailAsync(string to, string subject, string body)
+        public async Task SendEmailAsync(EmailDto emailDto)
         {
             var smtpSettings = await GetSmtpSettings() ?? throw new Exception("SMTP não configurado");
 
+            var destinario = await _context.Empresas.Where(a => a.Id == emailDto.EmpresaId).Select(a => a.Email).FirstOrDefaultAsync();
+
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(smtpSettings.Username));
-            email.To.Add(MailboxAddress.Parse(to));
-            email.Subject = subject;
+            email.To.Add(MailboxAddress.Parse(destinario));
+            email.Subject = emailDto.Assunto;
 
-            var builder = new BodyBuilder { HtmlBody = body };
+            var builder = new BodyBuilder { HtmlBody = emailDto.Mensagem };
             email.Body = builder.ToMessageBody();
 
             using var smtp = new SmtpClient();
